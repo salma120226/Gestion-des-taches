@@ -4,7 +4,8 @@ export const GestionTache = () => {
     const [inputValue, setInputValue] = useState("");
     const [dateValue, setdateValue] = useState("");
     const [tache, setTache] = useState([]);
-    const [indexModif, setIndexModif] = useState(null); // null = mode ajout
+    const [indexModif, setIndexModif] = useState(null); 
+    const [searchValue, setsearchValue]= useState("");
 
     const AjouterBtn = () => {
         if (inputValue.trim() === "") {
@@ -79,6 +80,7 @@ export const GestionTache = () => {
                         <option value="En Cours">En Cours</option>
                         <option value="Termine">Termine</option>
                 </select>
+                <input type="text" value={searchValue}/>search
                 <button onClick={AjouterBtn}>
                     {indexModif !== null ? "Enregistrer" : "Ajouter"}
                 </button>

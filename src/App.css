@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
   margin: 0;
+  background-color: rgb(85, 97, 104);
 }
 
 .container {
@@ -15,7 +16,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #333;
+  color: white;
 }
 
 .input-box {
@@ -46,7 +47,7 @@ table {
 }
 
 th {
-  background: #d2e546;
+  background: rgb(53, 57, 60);;
   color: white;
 }
 

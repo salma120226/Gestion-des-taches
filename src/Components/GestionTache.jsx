@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 const COULEURS = {
     "A Faire": "#f59e0b",
-    "En Cours": "#3b82f6",
+    "En Cours": "#f63b41",
     "Termine": "#22c55e",
 };
 export const GestionTache = () => {

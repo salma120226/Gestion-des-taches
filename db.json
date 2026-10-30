@@ -1,0 +1,25 @@
+{
+  "taches": [
+    {
+      "id": 1,
+      "text": "Réviser React",
+      "dateDebut": "2026-10-28",
+      "dateFin": "2026-11-05",
+      "statut": "En Cours"
+    },
+    {
+      "id": 2,
+      "text": "Finir le projet",
+      "dateDebut": "2026-10-20",
+      "dateFin": "2026-10-25",
+      "statut": "A Faire"
+    },
+    {
+      "id": 3,
+      "text": "Lire la documentation",
+      "dateDebut": "",
+      "dateFin": "",
+      "statut": "Termine"
+    }
+  ]
+}

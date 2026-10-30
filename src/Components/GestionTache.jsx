@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
 const COULEURS = {
@@ -6,6 +6,7 @@ const COULEURS = {
     "En Cours": "#f63b41",
     "Termine": "#22c55e",
 };
+const CLE_STOCKAGE = "taches";
 const aujourdhui = () => new Date().toLocaleDateString("en-CA");
 
 export const GestionTache = () => {
@@ -15,7 +16,20 @@ export const GestionTache = () => {
     const [statut, setStatut] = useState("A Faire");
     const [search, setSearch] = useState("");
 
-    const [taches, setTaches] = useState([]);
+    /*liste dyal toutes les tâches. Mnin kayt7el page, kaychouf wach kayn chi 7aja msauvegarda f localStorage: ila kayn kayrj3ha, ila ma kayn walo kayبda b liste khawya. try/catch bach ila wqe3 mochkil l’app ma tcrashich.*/
+    const [taches, setTaches] = useState(() => {
+        try {
+            const sauvegarde = localStorage.getItem(CLE_STOCKAGE);
+            return sauvegarde ? JSON.parse(sauvegarde) : [];
+        } catch {
+            return [];
+        }
+    });
+
+    useEffect(() => {
+        localStorage.setItem(CLE_STOCKAGE, JSON.stringify(taches));
+    }, [taches]);
+
     const [indexModif, setIndexModif] = useState(null);
 
     const viderFormulaire = () => {

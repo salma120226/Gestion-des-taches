@@ -66,7 +66,6 @@ export const GestionTache = () => {
         if (indexModif === index) viderFormulaire();
     };
 
-    // wach tache f retard : 3ndha dateFin 9bel l-youm w mazal machi Termine
     const estEnRetard = (t) =>
         t.dateFin !== "" && t.dateFin < aujourdhui() && t.statut !== "Termine";
 
@@ -190,7 +189,6 @@ export const GestionTache = () => {
                                 {t.text}
                             </td>
                             <td>{t.dateDebut || "-"}</td>
-                            {/* date fin b l-7mer ila tache f retard */}
                             <td style={{ color: estEnRetard(t) ? "#dc2626" : "inherit", fontWeight: estEnRetard(t) ? "bold" : "normal" }}>
                                 {t.dateFin || "-"}
                             </td>
